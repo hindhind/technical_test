@@ -1,18 +1,21 @@
-<div *ngFor="let item of lists.items" class="row" >
+<div *ngFor="let item of lists.items" class="row line" >
 
 
 
-  <div class="col-lg-3 col-md-3">
-      <img class="img-responsive" src="{{item.owner.avatar_url}}" alt="">
+  <div class="col-lg-2 col-md-2 no-padding">
+    <div class="media">
+        <img class="img-responsive" src="{{item.owner.avatar_url}}" alt="">
+    </div>
+
 
   </div>
-  <div class="col-lg-7 col-md-7">
-<div class="caption">
+  <div class="col-lg-8 col-md-8 ">
+<div class="caption ">
 <h2>{{item.name}}</h2>
 <p> {{item.description}}</p>
 <ul class="list-inline">
-  <li> Stars: {{item.stargazers_count}}</li>
-  <li>Issus: {{item.open_issues_count}}</li>
+  <li class="btn-nbr btn-primary"> Stars: {{item.stargazers_count}}</li>
+  <li class="btn-nbr btn-warning">Issus: {{item.open_issues_count}}</li>
   <li>Submitted 30 days ago by {{item.name}}</li>
 </ul>
 

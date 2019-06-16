@@ -11,4 +11,9 @@ export class MylistService {
     return this.http.get('https://api.github.com/search/repositories?q=created:%3E2017-10-22&sort=stars&order=desc');
 
   }
+    // Method to call api to get images  
+    getListbyPage(page: number)  
+    {  
+      return this.http.get('https://api.github.com/search/repositories?q=created:%3E2017-10-22&sort=stars&order=desc&page='+page);  
+    } 
 }

@@ -1,0 +1,17 @@
+.btn-nbr{
+font-size: 14px;
+text-transform: capitalize;
+}
+.line{
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+
+}
+.media{
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  max-width: 200px;;
+}
+.no-padding{
+  padding: 0px;
+}
