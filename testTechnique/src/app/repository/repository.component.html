@@ -1,27 +1,26 @@
-<div *ngFor="let item of lists.items" class="row line" >
-
-
-
-  <div class="col-lg-2 col-md-2 no-padding">
-    <div class="media">
-        <img class="img-responsive" src="{{item.owner.avatar_url}}" alt="">
+<div class="container"  infiniteScroll
+[infiniteScrollDistance]="2"
+[infiniteScrollThrottle]="1000"
+(scrolled)="onScroll()">
+  <div *ngFor="let item of lists.items" class="row line" >
+    <div class="col-lg-2 col-md-2 no-padding">
+      <div class="media">
+          <img class="img-responsive" src="{{item.owner.avatar_url}}" alt="">
+      </div>
     </div>
-
+    <div class="col-lg-8 col-md-8 ">
+  <div class="caption ">
+  <h2>{{item.name}}</h2>
+  <p> {{item.description}}</p>
+  <ul class="list-inline">
+    <li class="btn-nbr btn-primary"> Stars: {{item.stargazers_count}}</li>
+    <li class="btn-nbr btn-warning">Issus: {{item.open_issues_count}}</li>
+    <li>Submitted 30 days ago by {{item.name}}</li>
+  </ul>
+  </div>
+      </div>
 
   </div>
-  <div class="col-lg-8 col-md-8 ">
-<div class="caption ">
-<h2>{{item.name}}</h2>
-<p> {{item.description}}</p>
-<ul class="list-inline">
-  <li class="btn-nbr btn-primary"> Stars: {{item.stargazers_count}}</li>
-  <li class="btn-nbr btn-warning">Issus: {{item.open_issues_count}}</li>
-  <li>Submitted 30 days ago by {{item.name}}</li>
-</ul>
-
-
-
 </div>
-    </div>
 
-</div>
+
