@@ -8,7 +8,6 @@ import { MylistService } from '../mylist.service';
 })
 export class RepositoryComponent implements OnInit {
   lists: any = [];
-  pager:number = 1;
 
   constructor(private mylistservice: MylistService ) { }
 
@@ -16,16 +15,10 @@ export class RepositoryComponent implements OnInit {
     this._getList();
   }
   _getList() {
-    this.mylistservice.getListbyPage(this.pager).subscribe((data) => {
+    this.mylistservice.getList().subscribe((data) => {
       this.lists = data;
       console.log(this.lists);
     });
   }
-  // When scroll down the screen  
-  onScroll()  
-  {  
-    console.log("Scrolled");  
-    this.page = this.page + 1;  
-    this.getPhotos();  
-  } 
+
 }
